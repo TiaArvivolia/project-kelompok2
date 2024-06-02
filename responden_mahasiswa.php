@@ -1,5 +1,5 @@
 <?php
-$menu = 'dosen';
+$menu = 'mahasiswa';
 include_once('model/respon_biodata_mahasiswa.php'); // Adjusted the include file
 
 $status = isset($_GET['status']) ? strtolower($_GET['status']) : null;

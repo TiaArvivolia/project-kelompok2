@@ -1,7 +1,8 @@
 <?php
 include_once('model/koneksi.php');
 
-class RespondenSoal {
+class RespondenSoal
+{
 
     public $db;
     protected $table = 't_jawaban_dosen';
@@ -13,7 +14,8 @@ class RespondenSoal {
         $this->db->set_charset('utf8');
     }
 
-    public function insertJawaban($data, $responden_dosen_id) {
+    public function insertJawaban($data, $responden_dosen_id)
+    {
 
         $sql = "INSERT INTO {$this->table} (responden_dosen_id, soal_id, jawaban) VALUES (?, ?, ?)";
         $stmt = $this->db->prepare($sql);
@@ -22,4 +24,3 @@ class RespondenSoal {
         $stmt->close();
     }
 }
-?>

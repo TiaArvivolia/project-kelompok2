@@ -29,11 +29,23 @@ class RespondenTendik
 
     public function getDataById($id)
     {
-        $query = $this->db->prepare("SELECT * FROM {$this->table} WHERE responden_id = ?");
+        $query = $this->db->prepare("SELECT * FROM {$this->table} WHERE responden_tendik_id = ?");
         $query->bind_param('i', $id);
         $query->execute();
         return $query->get_result();
     }
 
+    public function updateData($data, $id)
+    {
+        $query = $this->db->prepare("UPDATE {$this->table} SET responden_nama=?, responden_nopeg=?, responden_unit=?, responden_tanggal=?, survey_id=? WHERE responden_tendik_id=?");
+        $query->bind_param('ssssii', $data['responden_nama'], $data['responden_nopeg'], $data['responden_unit'], $data['responden_tanggal'], $data['survey_id'], $id);
+        $query->execute();
+    }
+
+    public function deleteData($id)
+    {
+        $query = $this->db->prepare("DELETE FROM {$this->table} WHERE responden_tendik_id = ?");
+        $query->bind_param('i', $id);
+        $query->execute();
+    }
 }
-?>

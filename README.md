@@ -1,4 +1,4 @@
-# [AdminLTE - Bootstrap 4 Admin Dashboard](https://adminlte.io)
+<!-- # [AdminLTE - Bootstrap 4 Admin Dashboard](https://adminlte.io)
 
 [![npm version](https://img.shields.io/npm/v/admin-lte/latest.svg)](https://www.npmjs.com/package/admin-lte)
 [![Packagist](https://img.shields.io/packagist/v/almasaeed2010/adminlte.svg)](https://packagist.org/packages/almasaeed2010/adminlte)
@@ -102,4 +102,4 @@ AdminLTE.io reserves the right to change the license of future releases.
 - [Graphicsfuel](https://www.graphicsfuel.com/2013/02/13-high-resolution-blur-backgrounds/)
 - [Pickaface](https://pickaface.net/)
 - [Unsplash](https://unsplash.com/)
-- [Uifaces](http://uifaces.com/)
+- [Uifaces](http://uifaces.com/) -->

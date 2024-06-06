@@ -1,5 +1,6 @@
 <?php
 $menu = 'mahasiswa';
+include_once('model/session.php');
 include_once('model/respon_biodata_mahasiswa.php');
 
 $act = isset($_GET['act']) ? $_GET['act'] : '';

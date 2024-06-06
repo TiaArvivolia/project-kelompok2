@@ -1,7 +1,7 @@
 <?php
-$menu = 'tendik';
+$menu = 'industri';
 include_once('model/session.php');
-include_once('model/respon_biodata_tendik.php'); // Adjusted the include file
+include_once('model/respon_biodata_industri.php');
 
 $status = isset($_GET['status']) ? strtolower($_GET['status']) : null;
 $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
@@ -13,21 +13,15 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Responden Tendik</title>
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
+    <title>Responden Industri</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!-- Navbar -->
         <?php include_once('layouts/header.php'); ?>
-        <!-- Main Sidebar Container -->
         <?php include_once('layouts/sidebar.php'); ?>
 
         <div class="content-wrapper">
@@ -35,12 +29,12 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Responden Tendik</h1>
+                            <h1>Responden Industri</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Responden Tendik</li>
+                                <li class="breadcrumb-item active">Responden Industri</li>
                             </ol>
                         </div>
                     </div>
@@ -53,19 +47,14 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Data Responden Tendik</h3>
-                                    <!-- <div class="card-tools">
-                                        <a href="responden_tendik_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah</a>
-                                    </div> -->
+                                    <h3 class="card-title">Data Responden Industri</h3>
                                 </div>
                                 <div class="card-body">
-
                                     <?php
                                     if ($status == 'sukses') {
-                                        echo '<div class="alert alert-success">' . $message . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
+                                        echo '<div class="alert alert-success">' . htmlspecialchars($message) . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
                                     }
                                     ?>
-
                                     <div class="table-responsive">
                                         <table class="table table-sm table-bordered">
                                             <thead>
@@ -73,29 +62,35 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                                                     <th>No</th>
                                                     <th>ID</th>
                                                     <th>Tanggal</th>
-                                                    <th>No Pegawai</th>
                                                     <th>Nama</th>
-                                                    <th>Unit</th>
+                                                    <th>Jabatan</th>
+                                                    <th>Perusahaan</th>
+                                                    <th>Email</th>
+                                                    <th>No. HP</th>
+                                                    <th>Kota</th>
                                                     <th>Jawaban</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $responden_tendik = new RespondenTendik();
-                                                $list = $responden_tendik->getData();
+                                                $responden_industri = new RespondenIndustri();
+                                                $list = $responden_industri->getData();
 
                                                 $i = 1;
                                                 while ($row = $list->fetch_assoc()) {
                                                     echo '<tr>
-                                                      <td>' . $i . '</td>
-                                                      <td>' . $row['survey_id'] . '</td>
-                                                      <td>' . $row['responden_tanggal'] . '</td>
-                                                      <td>' . $row['responden_nopeg'] . '</td>
-                                                      <td>' . $row['responden_nama'] . '</td>
-                                                      <td>' . $row['responden_unit'] . '</td>
-                                                      <td>
-                                                        <a title="Lihat Jawaban" href="jawaban_tendik.php?id=' . $row['responden_tendik_id'] . '" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
-                                                      </td>
+                                                        <td>' . $i . '</td>
+                                                        <td>' . htmlspecialchars($row['survey_id']) . '</td>
+                                                        <td>' . htmlspecialchars($row['responden_tanggal']) . '</td>
+                                                        <td>' . htmlspecialchars($row['responden_nama']) . '</td>
+                                                        <td>' . htmlspecialchars($row['responden_jabatan']) . '</td>
+                                                        <td>' . htmlspecialchars($row['responden_perusahaan']) . '</td>
+                                                        <td>' . htmlspecialchars($row['responden_email']) . '</td>
+                                                        <td>' . htmlspecialchars($row['responden_hp']) . '</td>
+                                                        <td>' . htmlspecialchars($row['responden_kota']) . '</td>
+                                                        <td>
+                                                            <a title="Lihat Jawaban" href="jawaban_industri.php?id=' . $row['responden_industri_id'] . '" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                                        </td>
                                                     </tr>';
 
                                                     $i++;

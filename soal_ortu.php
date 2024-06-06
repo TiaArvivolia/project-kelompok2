@@ -140,7 +140,7 @@ $menu = 'soal';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Survei Kepuasan Dosen dan Tenaga Kependidikan terhadap Sistem
+                            <h2 class="card-title">Survei Kepuasan Orang Tua terhadap Sistem
                                 Pengelolaan Sumberdaya Manusia Politeknik Negeri Malang Tahun 2024</h2>
                             <div class="card-tools"></div>
                         </div>
@@ -150,22 +150,22 @@ $menu = 'soal';
                                 method="post">
                                 <div class="survey-container">
                                     <?php
-                        $options = ["Sangat kurang", "Kurang", "Cukup", "Baik", "Sangat Baik"];
-                        foreach ($soalOrtu->getSoalOrtu() as $soal) {
-                            echo "<div class='form-group survey-question'>";
-                            echo "<h6>{$soal['no_urut']}. {$soal['soal_nama']}</h6>";
-                            echo "<div class='options'>";
-                            foreach ($options as $jawaban) {
-                                echo "<div class='option'>";
-                                echo "<input type='radio' name='jawaban[{$soal['soal_id']}]' value='{$jawaban}' required>";
-                                echo "<span>{$jawaban}</span>";
-                                echo "</div>";
-                            }
-                            echo "</div>";
-                            echo "<input type='hidden' name='soal_id[]' value='{$soal['soal_id']}'>";
-                            echo "</div>";
-                        }
-                        ?>
+                                    $options = ["Sangat kurang", "Kurang", "Cukup", "Baik", "Sangat Baik"];
+                                    foreach ($soalOrtu->getSoalOrtu() as $soal) {
+                                        echo "<div class='form-group survey-question'>";
+                                        echo "<h6>{$soal['no_urut']}. {$soal['soal_nama']}</h6>";
+                                        echo "<div class='options'>";
+                                        foreach ($options as $jawaban) {
+                                            echo "<div class='option'>";
+                                            echo "<input type='radio' name='jawaban[{$soal['soal_id']}]' value='{$jawaban}' required>";
+                                            echo "<span>{$jawaban}</span>";
+                                            echo "</div>";
+                                        }
+                                        echo "</div>";
+                                        echo "<input type='hidden' name='soal_id[]' value='{$soal['soal_id']}'>";
+                                        echo "</div>";
+                                    }
+                                    ?>
                                     <div class="btn-submit-container">
                                         <button type="submit" class="btn-submit">Submit</button>
                                     </div>

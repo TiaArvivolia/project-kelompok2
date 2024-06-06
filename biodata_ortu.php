@@ -1,5 +1,5 @@
-<?php 
-$menu ='biodata';
+<?php
+$menu = 'biodata';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ $menu ='biodata';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/polinema.png">
-    <title>Beranda</title>
+    <title>Survey Orang Tua</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -60,9 +60,8 @@ $menu ='biodata';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Biodata</h1>
+                            <h1>Survey Orang Tua terhadap Polinema</h1>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -72,39 +71,40 @@ $menu ='biodata';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">ISI BIODATA ANDA</h3>
+                            <h3 class="card-title"> Silakan isi biodata Anda di bawah
+                                ini.</h3>
                             <div class="card-tools"></div>
                         </div>
                         <div class="card-body">
                             <form action="biodata_ortu_action.php?act=tambah" id="biodata" method="POST" class="form">
                                 <div class="form-group">
-                                    <?php
-                                    $nama = $user->getNama();
-                                    ?>
                                     <label for="nama">Nama</label>
-                                    <input type="text" name="responden_nama" class="form-control"
-                                        value="<?php echo $nama?>" required placeholder="Nama">
+                                    <input type="text" name="responden_nama" class="form-control" required
+                                        placeholder="Nama">
                                 </div>
                                 <div class="form-group">
                                     <label for="Jenis Kelamin">Jenis Kelamin</label>
-                                    <input type="enum" name="responden_jk" class="form-control" required
-                                        placeholder="JENIS KELAMIN">
+                                    <select name="responden_jk" class="form-control" required>
+                                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                        <option value="L">Laki-laki</option>
+                                        <option value="P">Perempuan</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="Umur">Umur</label>
-                                    <input type="tinyint" name="responden_umur" class="form-control" required
+                                    <input type="number" name="responden_umur" class="form-control" required
                                         placeholder="Masukkan Umur Anda">
-                                </div>
-                                <div class="form-group">
-                                    <label for="responden_tanggal">Tanggal Respon</label>
-                                    <input type="date" name="responden_tanggal" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="responden_pendidikan">Pendidikan Terakhir</label>
                                     <input type="text" name="responden_pendidikan" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="responden_hp">Masukkan No.Telpon</label>
+                                    <label for="responden_pekerjaan">Pekerjaan</label>
+                                    <input type="text" name="responden_pekerjaan" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="responden_hp">No. Telepon</label>
                                     <input type="text" name="responden_hp" class="form-control" required>
                                 </div>
                                 <div class="form-group">
@@ -112,22 +112,22 @@ $menu ='biodata';
                                     <input type="text" name="responden_penghasilan" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="mahasiswa_nim">nim Mahasiswa</label>
+                                    <label for="mahasiswa_nim">NIM Mahasiswa</label>
                                     <input type="text" name="mahasiswa_nim" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="mahasiswa_nama">Nama Putra/Putri Mahasiswa</label>
+                                    <label for="mahasiswa_nama">Nama Mahasiswa</label>
                                     <input type="text" name="mahasiswa_nama" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="mahasiswa_Prodi">Mahasiswa Prodi</label>
+                                    <label for="mahasiswa_Prodi">Prodi Mahasiswa</label>
                                     <input type="text" name="mahasiswa_prodi" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="survey">Survey</label>
                                     <p class="form-control-plaintext"
                                         style="border: 1px solid #ced4da; padding: .375rem .75rem; border-radius: .25rem;">
-                                        Survey Mahasiswa</p>
+                                        Survey Orang Tua</p>
                                     <input type="hidden" name="survey_id" value="5">
                                 </div>
 
@@ -166,18 +166,20 @@ $menu ='biodata';
                     minlength: 1
                 },
                 responden_nama: {
-                    required: true,
-                    minlength: 5
+                    required: true
                 },
                 responden_jk: {
-                    required: true,
-                    minlength: 1
+                    required: true
                 },
                 responden_umur: {
                     required: true,
                     minlength: 1
                 },
                 responden_pendidikan: {
+                    required: true,
+                    minlength: 2
+                },
+                responden_pekerjaan: {
                     required: true,
                     minlength: 2
                 },

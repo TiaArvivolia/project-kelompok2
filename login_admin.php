@@ -90,10 +90,10 @@ include_once("loginproses_admin.php");
                     </div>
                 </main>
                 <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
+                    <a href="forgot-password.html">Survey Dosen</a>
                 </p>
                 <p class="mb-0">
-                    <a href="register.html" class="text-center">Register a new membership</a>
+                    <a href="register.html" class="text-center">Survey Mahasiswa</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

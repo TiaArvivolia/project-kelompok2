@@ -1,7 +1,9 @@
-<?php 
-$menu = 'm_user'; 
-include_once('model/pengguna.php');
+<?php
+$menu = 'm_user';
 include_once('model/session.php');
+
+
+include_once('model/pengguna.php');
 
 $status = isset($_GET['status']) ? strtolower($_GET['status']) : null;
 $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
@@ -41,7 +43,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Akun Pengguna</h1>
+                            <h1>User</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -59,7 +61,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                 <!-- Default box -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Data Akun Pengguna</h3>
+                        <h3 class="card-title">Data User</h3>
 
                         <div class="card-tools">
                             <a href="pengguna_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah</a>
@@ -67,11 +69,11 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                     </div>
                     <div class="card-body">
 
-                        <?php 
-                        if($status == 'sukses'){
+                        <?php
+                        if ($status == 'sukses') {
                             echo '<div class="alert alert-success">
-                                '.$message.'
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
+                      ' . $message . '
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
                         }
                         ?>
 
@@ -79,29 +81,28 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>User Id</th>
-                                    <th>Username</th>
                                     <th>Nama</th>
+                                    <th>Username</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php 
-                                $pengguna = new Pengguna();
-                                $list = $pengguna->getData();
+                                <?php
+                                $bank = new Pengguna();
+                                $list = $bank->getData();
 
                                 $i = 1;
-                                while($row = $list->fetch_assoc()){
+                                while ($row = $list->fetch_assoc()) {
                                     echo '<tr>
-                                        <td>'.$i.'</td>
-                                        <td>'.$row['user_id'].'</td>
-                                        <td>'.$row['username'].'</td>
-                                        <td>'.$row['nama'].'</td>
-                                        <td>
-                                            <a title="Edit Data" href="pengguna_form.php?act=edit&id='.$row['user_id'].'" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                            <a onclick="return confirm(\'Apakah anda yakin menghapus data ini?\')" title="Hapus Data" href="pengguna_action.php?act=hapus&id='.$row['user_id'].'" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>';
+                      <td>' . $i . '</td>
+                      <td>' . $row['nama'] . '</td>
+                      <td>' . $row['username'] . '</td>
+                      <td>
+                        <a title="Edit Data" href="pengguna_form.php?act=edit&id=' . $row['user_id'] . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                        <a onclick="return confirm(\'Apakah anda yakin menghapus data ini?\')" title="Hapus Data" href="pengguna_action.php?act=hapus&id=' . $row['user_id'] . '" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                      </td>
+      
+                    </tr>';
 
                                     $i++;
                                 }
@@ -138,6 +139,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
+
     <script src="plugins/jquery-validation/jquery.validate.min.js"></script>
     <script src="plugins/jquery-validation/additional-methods.min.js"></script>
 

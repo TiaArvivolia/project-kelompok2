@@ -1,6 +1,6 @@
 <?php
 include "model/koneksi.php";
-include_once("loginprosess_pengguna.php");
+// include_once("loginprosess_pengguna.php");
 ?>
 
 <!DOCTYPE html>

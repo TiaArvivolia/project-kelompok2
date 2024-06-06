@@ -1,5 +1,6 @@
 <?php
 $menu = 'alumni';
+include_once('model/session.php');
 include_once('model/respon_biodata_alumni.php'); // Adjusted the include file
 
 $status = isset($_GET['status']) ? strtolower($_GET['status']) : null;
@@ -33,10 +34,10 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <h1>Responden Alumni</h1>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-6 text-right">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">Responden Alumni</li>
@@ -47,68 +48,68 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
             </section>
 
             <section class="content">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Data Responden Alumni</h3>
-                        <div class="card-tools">
-                            <a href="responden_alumni_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah</a>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Data Responden Alumni</h3>
+                                    <!-- <div class="card-tools">
+                                        <a href="responden_alumni_form.php?act=tambah"
+                                            class="btn btn-sm btn-primary">Tambah</a>
+                                    </div> -->
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>ID</th>
+                                                    <th>Tanggal</th>
+                                                    <th>NIM</th>
+                                                    <th>Nama</th>
+                                                    <th>Program Studi</th>
+                                                    <th>Email</th>
+                                                    <th>Nomor HP</th>
+                                                    <th>Tahun Lulus</th>
+                                                    <th>Jawaban</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $responden_alumni = new RespondenAlumni();
+                                                $list = $responden_alumni->getData();
+
+                                                $i = 1;
+                                                while ($row = $list->fetch_assoc()) {
+                                                    echo '<tr>
+                                                      <td>' . $i . '</td>
+                                                      <td>' . $row['survey_id'] . '</td>
+                                                      <td>' . $row['responden_tanggal'] . '</td>
+                                                      <td>' . $row['responden_nim'] . '</td>
+                                                      <td>' . $row['responden_nama'] . '</td>
+                                                      <td>' . $row['responden_prodi'] . '</td>
+                                                      <td>' . $row['responden_email'] . '</td>
+                                                      <td>' . $row['responden_hp'] . '</td>
+                                                      <td>' . $row['tahun_lulus'] . '</td>
+                                                      <td>
+                                                        <a title="Lihat Jawaban" href="jawaban_alumni.php?id=' . $row['responden_alumni_id'] . '" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                                      </td>
+                                                    </tr>';
+
+                                                    $i++;
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Footer
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-
-                        <?php
-                        if ($status == 'sukses') {
-                            echo '<div class="alert alert-success">' . $message . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
-                        }
-                        ?>
-
-                        <table class="table table-sm table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Survey ID</th>
-                                    <th>Tanggal</th>
-                                    <th>NIM</th>
-                                    <th>Nama</th>
-                                    <th>Program Studi</th>
-                                    <th>Email</th>
-                                    <th>Nomor HP</th>
-                                    <th>Tahun Lulus</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $responden_alumni = new RespondenAlumni();
-                                $list = $responden_alumni->getData();
-
-                                $i = 1;
-                                while ($row = $list->fetch_assoc()) {
-                                    echo '<tr>
-                      <td>' . $i . '</td>
-                      <td>' . $row['survey_id'] . '</td>
-                      <td>' . $row['responden_tanggal'] . '</td>
-                      <td>' . $row['responden_nim'] . '</td>
-                      <td>' . $row['responden_nama'] . '</td>
-                      <td>' . $row['responden_prodi'] . '</td>
-                      <td>' . $row['responden_email'] . '</td>
-                      <td>' . $row['responden_hp'] . '</td>
-                      <td>' . $row['tahun_lulus'] . '</td>
-                      <td>
-                        <a title="Edit Data" href="responden_alumni_form.php?act=edit&id=' . $row['responden_alumni_id'] . '" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
-                        <a onclick="return confirm(\'Apakah anda yakin menghapus data ini?\')" title="Hapus Data" href="responden_alumni_action.php?act=hapus&id=' . $row['responden_alumni_id'] . '" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                      </td>
-      
-                    </tr>';
-
-                                    $i++;
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-                        Footer
                     </div>
                 </div>
             </section>

@@ -2,6 +2,8 @@
 $menu = 'survey';
 include_once('model/survey.php');
 include_once('model/pengguna.php');
+include_once('model/session.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -11,29 +13,17 @@ include_once('model/pengguna.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Survey</title>
-
-    <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
     <div class="wrapper">
-        <!-- Navbar -->
         <?php include_once('layouts/header.php'); ?>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
         <?php include_once('layouts/sidebar.php'); ?>
-
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -47,31 +37,30 @@ include_once('model/pengguna.php');
                             </ol>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
             </section>
 
-            <!-- Main content -->
             <section class="content">
-
-                <!-- Default box -->
                 <?php
                 $act = (isset($_GET['act'])) ? $_GET['act'] : '';
 
                 if ($act == 'tambah') {
                 ?>
-
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Tambah Survey</h3>
-                        <div class="card-tools"></div>
                     </div>
                     <div class="card-body">
                         <form action="survey_action.php?act=simpan" method="post" id="form-tambah">
                             <div class="form-group">
                                 <label for="survey_jenis">Jenis Survey</label>
                                 <select required name="survey_jenis" id="survey_jenis" class="form-control">
-                                    <option value="Kualitas Layanan">Kualitas Layanan</option>
-                                    <option value="Fasilitas Kampus">Fasilitas Kampus</option>
+                                    <option value="Dosen">Dosen</option>
+                                    <option value="Mahasiswa">Mahasiswa</option>
+                                    <option value="Tendik">Tendik</option>
+                                    <option value="Alumni">Alumni</option>
+                                    <option value="Orang Tua">Orang Tua</option>
+                                    <option value="Industri">Industri</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -98,14 +87,12 @@ include_once('model/pengguna.php');
                                     <?php
                                         $survey = new Survey();
                                         $user_data = $survey->getUserData();
-
                                         foreach ($user_data as $user) {
                                             echo '<option value="' . $user['user_id'] . '">' . $user['nama'] . '</option>';
                                         }
                                         ?>
                                 </select>
                             </div>
-
                             <div class="form-group">
                                 <button type="submit" name="simpan" class="btn btn-primary"
                                     value="simpan">Simpan</button>
@@ -114,35 +101,40 @@ include_once('model/pengguna.php');
                         </form>
                     </div>
                 </div>
-
                 <?php } else if ($act == 'edit') { ?>
-
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Edit Survey</h3>
-                        <div class="card-tools"></div>
                     </div>
                     <div class="card-body">
-
                         <?php
                             $id = $_GET['id'];
-
                             $m_survey = new Survey();
                             $data = $m_survey->getDataById($id);
-
                             $data = $data->fetch_assoc();
                             ?>
-
                         <form action="survey_action.php?act=edit&id=<?php echo $id ?>" method="post" id="form-tambah">
                             <div class="form-group">
                                 <label for="survey_jenis">Jenis Survey</label>
                                 <select required name="survey_jenis" id="survey_jenis" class="form-control">
-                                    <option value="Kualitas Layanan"
-                                        <?php echo $data['survey_jenis'] == 'Kualitas Layanan' ? 'selected' : '' ?>>
-                                        Kualitas Layanan</option>
-                                    <option value="Fasilitas Kampus"
-                                        <?php echo $data['survey_jenis'] == 'Fasilitas Kampus' ? 'selected' : '' ?>>
-                                        Fasilitas Kampus</option>
+                                    <option value="Dosen"
+                                        <?php echo $data['survey_jenis'] == 'Dosen' ? 'selected' : '' ?>>
+                                        Dosen</option>
+                                    <option value="Mahasiswa"
+                                        <?php echo $data['survey_jenis'] == 'Mahasiswa' ? 'selected' : '' ?>>
+                                        Mahasiswa</option>
+                                    <option value="Tendik"
+                                        <?php echo $data['survey_jenis'] == 'Tendik' ? 'selected' : '' ?>>
+                                        Tendik</option>
+                                    <option value="Alumni"
+                                        <?php echo $data['survey_jenis'] == 'Alumni' ? 'selected' : '' ?>>
+                                        Alumni</option>
+                                    <option value="Orang Tua"
+                                        <?php echo $data['survey_jenis'] == 'Orang Tua' ? 'selected' : '' ?>>
+                                        Orang Tua</option>
+                                    <option value="Industri"
+                                        <?php echo $data['survey_jenis'] == 'Industri' ? 'selected' : '' ?>>
+                                        Industri</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -171,7 +163,6 @@ include_once('model/pengguna.php');
                                     <?php
                                         $survey = new Survey();
                                         $user_data = $survey->getUserData();
-
                                         foreach ($user_data as $user) {
                                             $selected = ($user['user_id'] == $data['user_id']) ? 'selected' : '';
                                             echo '<option value="' . $user['user_id'] . '" ' . $selected . '>' . $user['nama'] . '</option>';
@@ -179,7 +170,6 @@ include_once('model/pengguna.php');
                                         ?>
                                 </select>
                             </div>
-
                             <div class="form-group">
                                 <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
                                 <a href="survey.php" class="btn btn-warning">Kembali</a>
@@ -187,68 +177,47 @@ include_once('model/pengguna.php');
                         </form>
                     </div>
                 </div>
-
                 <?php } ?>
-
             </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-
         <?php include_once('layouts/footer.php'); ?>
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+        <aside class="control-sidebar control-sidebar-dark"></aside>
     </div>
-    <!-- ./wrapper -->
-
-    <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
-
     <script src="plugins/jquery-validation/jquery.validate.min.js"></script>
     <script src="plugins/jquery-validation/additional-methods.min.js"></script>
     <script src="plugins/jquery-validation/localization/messages_id.min.js"></script>
-
     <script>
-    $(document).ready(
-        function() { // maksudnya adalah ketika dokumen sudah siap (html telah dirender oleh browser) maka jalankan fungsi berikut ini
-
-            $('#form-tambah').validate({
-                rules: {
-                    survey_kode: {
-                        required: true,
-                        minlength: 3,
-                        maxlength: 10
-                    },
-                    survey_nama: {
-                        required: true,
-                        minlength: 5,
-                        maxlength: 255
-                    }
+    $(document).ready(function() {
+        $('#form-tambah').validate({
+            rules: {
+                survey_kode: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 10
                 },
-                errorElement: 'span',
-                errorPlacement: function(error, element) {
-                    error.addClass('invalid-feedback');
-                    element.closest('.form-group').append(error);
-                },
-                highlight: function(element, errorClass, validClass) {
-                    $(element).addClass('is-invalid');
-                },
-                unhighlight: function(element, errorClass, validClass) {
-                    $(element).removeClass('is-invalid');
+                survey_nama: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 255
                 }
-            });
-
+            },
+            errorElement: 'span',
+            errorPlacement: function(error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
         });
+    });
     </script>
-
 </body>
 
 </html>

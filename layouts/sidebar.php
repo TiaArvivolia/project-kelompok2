@@ -88,37 +88,43 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="responden_dosen.php" class="nav-link <?php echo ($menu == 'dosen') ? 'active' : '' ?>">
+                            <a href="responden_dosen.php"
+                                class="nav-link <?php echo ($menu == 'dosen') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Dosen</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="responden_mahasiswa.php" class="nav-link <?php echo ($menu == 'mahasiswa') ? 'active' : '' ?>">
+                            <a href="responden_mahasiswa.php"
+                                class="nav-link <?php echo ($menu == 'mahasiswa') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mahasiswa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="responden_tendik.php" class="nav-link <?php echo ($menu == 'tendik') ? 'active' : '' ?>">
+                            <a href="responden_tendik.php"
+                                class="nav-link <?php echo ($menu == 'tendik') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tendik</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="responden_alumni.php" class="nav-link <?php echo ($menu == 'alumni') ? 'active' : '' ?>">
+                            <a href="responden_alumni.php"
+                                class="nav-link <?php echo ($menu == 'alumni') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Alumni</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="responden_ortu.php" class="nav-link <?php echo ($menu == 'ortu') ? 'active' : '' ?>">
+                            <a href="responden_ortu.php"
+                                class="nav-link <?php echo ($menu == 'ortu') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Orang Tua</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="responden_industri.php" class="nav-link <?php echo ($menu == 'industri') ? 'active' : '' ?>">
+                            <a href="responden_industri.php"
+                                class="nav-link <?php echo ($menu == 'industri') ? 'active' : '' ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Industri</p>
                             </a>

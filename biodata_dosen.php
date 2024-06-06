@@ -1,5 +1,5 @@
-<?php 
-$menu ='index';
+<?php
+$menu = 'index';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,12 +78,9 @@ $menu ='index';
                         <div class="card-body">
                             <form action="biodata_dosen_action.php?act=tambah" id="biodata" method="POST" class="form">
                                 <div class="form-group">
-                                    <?php
-                                    $nama = $user->getNama();
-                                    ?>
                                     <label for="nama">Nama</label>
-                                    <input type="text" name="responden_nama" class="form-control"
-                                        value="<?php echo $nama?>" required placeholder="Nama">
+                                    <input type="text" name="responden_nama" class="form-control" required
+                                        placeholder="Nama">
                                 </div>
                                 <div class="form-group">
                                     <label for="nip">NIP</label>
@@ -142,16 +139,14 @@ $menu ='index';
                     minlength: 1
                 },
                 responden_nama: {
-                    required: true,
-                    minlength: 5
+                    required: true
                 },
                 responden_nip: {
                     required: true,
                     minlength: 5
                 },
                 responden_unit: {
-                    required: true,
-                    minlength: 5
+                    required: true
                 },
                 responden_tanggal: {
                     required: true

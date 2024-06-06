@@ -1,10 +1,11 @@
 <?php
-$menu = 'survey_soal_from';
+$menu = 'survey_soal';
 include_once('model/session.php');
-include_once('model/kategori.php');
 include_once('model/survey.php');
+include_once('model/kategori.php');
 include_once('model/survey_soal_model.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,25 +47,21 @@ include_once('model/survey_soal_model.php');
 
             <section class="content">
                 <?php
-                
                 $act = (isset($_GET['act'])) ? $_GET['act'] : '';
 
                 if ($act == 'tambah') {
                 ?>
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah Soal Survey</h3>
+                        <h3 class="card-title">Tambah Soal</h3>
                     </div>
                     <div class="card-body">
-                        <form action="survey_soal_action.php?act=simpan" method="post" id="form-tambah">
+                        <form action="survey_soal_action.php?act=tambah" method="post" id="form-tambah">
                             <div class="form-group">
-                                <label for="soal_id">Kode Soal</label>
-                                <input type="text" name="soal_id" id="soal_id" class="form-control">
+                                <label for="soal_nama">Soal</label>
+                                <textarea required name="soal_nama" id="soal_nama" class="form-control"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="soal_nama">Nama Soal</label>
-                                <input required type="text" name="soal_nama" id="soal_nama" class="form-control">
-                            </div>
+
                             <div class="form-group">
                                 <label for="survey_id">Survey</label>
                                 <select required name="survey_id" id="survey_id" class="form-control">
@@ -89,24 +86,25 @@ include_once('model/survey_soal_model.php');
                                         ?>
                                 </select>
                             </div>
-
                             <div class="form-group">
-                                <label for="kategori_id">Soal Jenis</label>
-                                <select required name="kategori_id" id="kategori_id" class="form-control">
-                                    <?php
-                                        $soal_jenis = new SurveySoal();
-                                        $soal_jenis = $soal_jenis->getSoalJenis();
-                                        while ($row = $soal_jenis->fetch_assoc()) {
-                                            echo '<option value="' . $row['soal_jenis'] . '">' . $row['soal_jenis'] . '</option>';
-                                        }
-                                        ?>
+                                <label for="no_urut">No Urut</label>
+                                <input required type="number" name="no_urut" id="no_urut" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="soal_jenis">Jenis Soal</label>
+                                <select required name="soal_jenis" id="soal_jenis" class="form-control">
+                                    <option value="Rating">Rating</option>
+                                    <option value="Essay">Essay</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
-                                <a href="survey_soal_from.php" class="btn btn-warning">Kembali</a>
+                                <a href="survey_soal.php" class="btn btn-warning">Kembali</a>
                             </div>
                         </form>
+
+
+
                     </div>
                 </div>
                 <?php } else if ($act == 'edit') {
@@ -123,14 +121,9 @@ include_once('model/survey_soal_model.php');
                         <form action="survey_soal_action.php?act=edit&id=<?php echo $id ?>" method="post"
                             id="form-edit">
                             <div class="form-group">
-                                <label for="soal_id">Kode Soal</label>
-                                <input type="text" name="soal_id" id="soal_id" class="form-control"
-                                    value="<?php echo $data['soal_id'] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="soal_nama">Nama Soal</label>
-                                <input required type="text" name="soal_nama" id="soal_nama" class="form-control"
-                                    value="<?php echo $data['soal_nama'] ?>">
+                                <label for="soal_nama">Soal</label>
+                                <textarea required name="soal_nama" id="soal_nama"
+                                    class="form-control"><?php echo $data['soal_nama'] ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="survey_id">Survey</label>
@@ -159,9 +152,19 @@ include_once('model/survey_soal_model.php');
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="no_urut">No Urut</label>
+                                <input required type="number" name="no_urut" id="no_urut" class="form-control"
+                                    value="<?php echo $data['no_urut'] ?>">
+                            </div>
+                            <div class="form-group">
                                 <label for="soal_jenis">Jenis Soal</label>
-                                <input required type="text" name="soal_jenis" id="soal_jenis" class="form-control"
-                                    value="<?php echo $data['soal_jenis'] ?>">
+                                <select required name="soal_jenis" id="soal_jenis" class="form-control">
+                                    <option value="Rating"
+                                        <?php echo $data['soal_jenis'] == 'Rating' ? 'selected' : '' ?>>Rating
+                                    </option>
+                                    <option value="Essay"
+                                        <?php echo $data['soal_jenis'] == 'Essay' ? 'selected' : '' ?>>Essay</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
@@ -173,18 +176,44 @@ include_once('model/survey_soal_model.php');
                 <?php } ?>
             </section>
         </div>
+        <?php include_once('layouts/footer.php'); ?>
+        <aside class="control-sidebar control-sidebar-dark"></aside>
     </div>
-
-    <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
-
     <script src="plugins/jquery-validation/jquery.validate.min.js"></script>
     <script src="plugins/jquery-validation/additional-methods.min.js"></script>
-
+    <script src="plugins/jquery-validation/localization/messages_id.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#form-tambah').validate({
+            rules: {
+                survey_kode: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 10
+                },
+                survey_nama: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 255
+                }
+            },
+            errorElement: 'span',
+            errorPlacement: function(error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

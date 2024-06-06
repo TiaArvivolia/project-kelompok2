@@ -1,6 +1,8 @@
 <?php
 $menu = 'kategori';
 include_once('model/kategori.php');
+include_once('model/session.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -108,8 +110,7 @@ include_once('model/kategori.php');
             rules: {
                 kategori_nama: {
                     required: true,
-                    minlength: 3,
-                    maxlength: 50
+                    minlength: 3
                 }
             },
             errorElement: 'span',

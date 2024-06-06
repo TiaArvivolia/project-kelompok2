@@ -1,6 +1,8 @@
 <?php
 $menu = 'dosen';
 include_once('model/respon_biodata_dosen.php');
+include_once('model/session.php');
+
 
 $act = isset($_GET['act']) ? $_GET['act'] : '';
 $id = isset($_GET['id']) ? $_GET['id'] : '';

@@ -1,5 +1,5 @@
-<?php 
-$menu ='index';
+<?php
+$menu = 'index';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,12 +78,9 @@ $menu ='index';
                         <div class="card-body">
                             <form action="biodata_tendik_action.php?act=tambah" id="biodata" method="POST" class="form">
                                 <div class="form-group">
-                                    <?php
-                                    $nama = $user->getNama();
-                                    ?>
                                     <label for="nama">Nama</label>
-                                    <input type="text" name="responden_nama" class="form-control"
-                                        value="<?php echo $nama?>" required placeholder="Nama">
+                                    <input type="text" name="responden_nama" class="form-control" required
+                                        placeholder="Nama">
                                 </div>
                                 <div class="form-group">
                                     <label for="nip">No Pegawai</label>

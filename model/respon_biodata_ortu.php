@@ -4,7 +4,7 @@ include_once('model/koneksi.php');
 class RespondenOrtu
 {
     public $db;
-    protected $table = 't_responden_ortu'; // Ubah nama tabel ke 't_responden_ortu'
+    protected $table = 't_responden_ortu';
 
     public function __construct()
     {
@@ -41,7 +41,6 @@ class RespondenOrtu
         $query->bind_param('ssissssssssii', $data['responden_nama'], $data['responden_jk'], $data['responden_umur'], $data['responden_hp'], $data['responden_pendidikan'], $data['responden_pekerjaan'], $data['responden_penghasilan'], $data['mahasiswa_nim'], $data['mahasiswa_nama'], $data['mahasiswa_prodi'], $data['responden_tanggal'], $data['survey_id'], $id);
         $query->execute();
     }
-
 
     // Add the deleteData method
     public function deleteData($id)

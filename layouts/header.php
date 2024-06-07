@@ -28,8 +28,7 @@ $user = new Pengguna();
             <div class="navbar-search-block">
                 <form class="form-inline">
                     <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                            aria-label="Search">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-navbar" type="submit">
                                 <i class="fas fa-search"></i>
@@ -52,11 +51,6 @@ $user = new Pengguna();
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                <i class="fas fa-th-large"></i>
-            </a>
-        </li>
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
                 <i class="fas fa-user"></i>
@@ -66,10 +60,10 @@ $user = new Pengguna();
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
                     <?php
-                    $nama=$user->getNama();
+                    $nama = $user->getNama();
                     ?>
                     <i class="fas fa-user mr-2"></i>
-                    <?PHP echo $nama?>
+                    <?PHP echo $nama ?>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="logoutproses.php" class="dropdown-item">

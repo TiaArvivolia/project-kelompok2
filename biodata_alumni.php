@@ -8,7 +8,7 @@ $menu = 'biodata';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/polinema.png">
-    <title>Beranda</title>
+    <title>Survey Alumni</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -60,9 +60,8 @@ $menu = 'biodata';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Biodata</h1>
+                            <h1>Survey Kepuasan Alumni terhadap Polinema</h1>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -72,7 +71,8 @@ $menu = 'biodata';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">ISI BIODATA ANDA</h3>
+                            <h3 class="card-title"> Silakan isi biodata Anda di bawah
+                                ini.</h3>
                             <div class="card-tools"></div>
                         </div>
                         <div class="card-body">
@@ -80,33 +80,32 @@ $menu = 'biodata';
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" name="responden_nama" class="form-control" required
-                                        placeholder="Nama">
+                                        placeholder="Nama Lengkap Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="Nim">Nim</label>
+                                    <label for="Nim">NIM</label>
                                     <input type="text" name="responden_nim" class="form-control" required
-                                        placeholder="NIM">
+                                        placeholder="NIM Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="Prodi">Prodi</label>
+                                    <label for="Prodi">Program Studi</label>
                                     <input type="text" name="responden_prodi" class="form-control" required
-                                        placeholder="Misal D4 Sistem Informasi Bisnis ">
-                                </div>
-                                <div class="form-group">
-                                    <label for="responden_tanggal">Tanggal Respon</label>
-                                    <input type="date" name="responden_tanggal" class="form-control" required>
+                                        placeholder="Contoh: D4 Sistem Informasi Bisnis">
                                 </div>
                                 <div class="form-group">
                                     <label for="responden_email">Alamat Email</label>
-                                    <input type="text" name="responden_email" class="form-control" required>
+                                    <input type="text" name="responden_email" class="form-control" required
+                                        placeholder="Alamat Email Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="responden_hp">Masukkan No.Telpon</label>
-                                    <input type="text" name="responden_hp" class="form-control" required>
+                                    <label for="responden_hp">No. Telepon</label>
+                                    <input type="text" name="responden_hp" class="form-control" required
+                                        placeholder="No. Telepon Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="tahun_lulus">Mahasiswa Lulusan Tahun</label>
-                                    <input type="year" name="tahun_lulus" class="form-control" required>
+                                    <label for="tahun_lulus">Tahun Lulus</label>
+                                    <input type="year" name="tahun_lulus" class="form-control" required
+                                        placeholder="Tahun Lulus Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="survey">Survey</label>

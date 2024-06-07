@@ -6,7 +6,7 @@ $act = $_GET['act'];
 if ($act == 'tambah') {
     // Set the default timezone to "Asia/Jakarta"
     date_default_timezone_set('Asia/Jakarta');
-    
+
     // Get the current date and time
     $current_datetime = date("Y-m-d H:i:s");
 

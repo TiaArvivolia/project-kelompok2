@@ -1,8 +1,7 @@
 <?php
-if (SESSION_STATUS() === PHP_SESSION_NONE){
+if (SESSION_STATUS() === PHP_SESSION_NONE) {
     SESSION_START();
 }
 // header('Location: login_pengguna.php');
-header('Location: landing1.php');
+header('Location: landing-page.php');
 exit();
-?>

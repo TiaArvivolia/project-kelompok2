@@ -13,9 +13,10 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Responden Ortu</title>
+    <title>Responden Orang Tua</title>
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Bootstrap CSS -->
@@ -36,12 +37,12 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Responden Ortu</h1>
+                            <h1>Responden Orang Tua</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Responden Ortu</li>
+                                <li class="breadcrumb-item active">Responden Orang Tua</li>
                             </ol>
                         </div>
                     </div>
@@ -51,7 +52,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
             <section class="content">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Data Responden Ortu</h3>
+                        <h3 class="card-title">Data Responden Orang Tua</h3>
                         <!-- <div class="card-tools">
                             <a href="responden_ortu_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah</a>
                         </div> -->

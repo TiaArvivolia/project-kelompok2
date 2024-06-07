@@ -8,7 +8,7 @@ $menu = 'index';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/polinema.png">
-    <title>Beranda</title>
+    <title>Survey Tendik</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -60,9 +60,8 @@ $menu = 'index';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Biodata</h1>
+                            <h1>Survey Kepuasan Tendik terhadap Polinema</h1>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -72,7 +71,8 @@ $menu = 'index';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Silahkan Mengisi Biodata Anda Terlebih Dahulu</h3>
+                            <h3 class="card-title"> Silakan isi biodata Anda di bawah
+                                ini.</h3>
                             <div class="card-tools"></div>
                         </div>
                         <div class="card-body">
@@ -80,21 +80,17 @@ $menu = 'index';
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" name="responden_nama" class="form-control" required
-                                        placeholder="Nama">
+                                        placeholder="Nama Lengkap Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nip">No Pegawai</label>
+                                    <label for="nip">No. Pegawai</label>
                                     <input type="text" name="responden_nopeg" class="form-control" required
-                                        placeholder="NOPEG">
+                                        placeholder="No. Pegawai Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="unit">Sebagai Pegawai</label>
                                     <input type="text" name="responden_unit" class="form-control" required
-                                        placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="responden_tanggal">Tanggal Mengisi Survey</label>
-                                    <input type="date" name="responden_tanggal" class="form-control" required>
+                                        placeholder="Contoh: Teknisi Prodi Teknik Informatika JTI">
                                 </div>
                                 <div class="form-group">
                                     <label for="survey">Survey</label>

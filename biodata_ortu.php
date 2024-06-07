@@ -60,7 +60,7 @@ $menu = 'biodata';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Survey Orang Tua terhadap Polinema</h1>
+                            <h1>Survey Kepuasan Orang Tua terhadap Polinema</h1>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ $menu = 'biodata';
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" name="responden_nama" class="form-control" required
-                                        placeholder="Nama">
+                                        placeholder="Nama Lengkap Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="Jenis Kelamin">Jenis Kelamin</label>
@@ -93,35 +93,42 @@ $menu = 'biodata';
                                 <div class="form-group">
                                     <label for="Umur">Umur</label>
                                     <input type="number" name="responden_umur" class="form-control" required
-                                        placeholder="Masukkan Umur Anda">
+                                        placeholder="Umur Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="responden_pendidikan">Pendidikan Terakhir</label>
-                                    <input type="text" name="responden_pendidikan" class="form-control" required>
+                                    <input type="text" name="responden_pendidikan" class="form-control" required
+                                        placeholder="Pendidikan Terakhir Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="responden_pekerjaan">Pekerjaan</label>
-                                    <input type="text" name="responden_pekerjaan" class="form-control" required>
+                                    <input type="text" name="responden_pekerjaan" class="form-control" required
+                                        placeholder="Pekerjaan Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="responden_hp">No. Telepon</label>
-                                    <input type="text" name="responden_hp" class="form-control" required>
+                                    <input type="text" name="responden_hp" class="form-control" required
+                                        placeholder="No. Telepon Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="responden_penghasilan">Penghasilan perbulan</label>
-                                    <input type="text" name="responden_penghasilan" class="form-control" required>
+                                    <label for="responden_penghasilan">Penghasilan</label>
+                                    <input type="text" name="responden_penghasilan" class="form-control" required
+                                        placeholder="Penghasilan Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="mahasiswa_nim">NIM Mahasiswa</label>
-                                    <input type="text" name="mahasiswa_nim" class="form-control" required>
+                                    <input type="text" name="mahasiswa_nim" class="form-control" required
+                                        placeholder="NIM Mahasiswa Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="mahasiswa_nama">Nama Mahasiswa</label>
-                                    <input type="text" name="mahasiswa_nama" class="form-control" required>
+                                    <input type="text" name="mahasiswa_nama" class="form-control" required
+                                        placeholder="Nama Mahasiswa Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="mahasiswa_Prodi">Prodi Mahasiswa</label>
-                                    <input type="text" name="mahasiswa_prodi" class="form-control" required>
+                                    <label for="mahasiswa_Prodi">Program Studi Mahasiswa</label>
+                                    <input type="text" name="mahasiswa_prodi" class="form-control" required
+                                        placeholder="Program Studi Mahasiswa Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="survey">Survey</label>

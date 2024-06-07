@@ -8,7 +8,8 @@ $menu = 'index';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/polinema.png">
-    <title>Beranda</title>
+    <title>Survey Dosen</title>
+
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -60,9 +61,8 @@ $menu = 'index';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Biodata</h1>
+                            <h1>Survey Kepuasan Dosen terhadap Polinema</h1>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -72,7 +72,8 @@ $menu = 'index';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">ISI BIODATA ANDA</h3>
+                            <h3 class="card-title"> Silakan isi biodata Anda di bawah
+                                ini.</h3>
                             <div class="card-tools"></div>
                         </div>
                         <div class="card-body">
@@ -80,21 +81,17 @@ $menu = 'index';
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" name="responden_nama" class="form-control" required
-                                        placeholder="Nama">
+                                        placeholder="Nama Lengkap Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="nip">NIP</label>
                                     <input type="text" name="responden_nip" class="form-control" required
-                                        placeholder="NIP">
+                                        placeholder="NIP Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="unit">Sebagai Dosen</label>
                                     <input type="text" name="responden_unit" class="form-control" required
-                                        placeholder="Misal sebagai Dosen JTI">
-                                </div>
-                                <div class="form-group">
-                                    <label for="responden_tanggal">Tanggal Respon</label>
-                                    <input type="date" name="responden_tanggal" class="form-control" required>
+                                        placeholder="Contoh: Dosen Jurusan Teknologi Informasi">
                                 </div>
                                 <div class="form-group">
                                     <label for="survey">Survey</label>

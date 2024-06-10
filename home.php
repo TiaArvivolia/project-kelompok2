@@ -105,97 +105,98 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                 <div class="container-fluid">
                     <div class="row">
                         <!-- Small boxes (Stat box) -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3><?php echo $jawabanDosenCount; ?></h3>
-                                    <p>Jawaban Dosen</p>
+                                    <p>Total Jawaban Dosen</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-chalkboard-teacher"></i>
                                 </div>
-                                <a href="responden_dosen.php" class="small-box-footer">More info <i
+                                <a href="responden_dosen.php" class="small-box-footer">Detail Lengkap <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3><?php echo $mahasiswaCount; ?></h3>
-                                    <p>Jawaban Mahasiswa</p>
+                                    <p>Total Jawaban Mahasiswa</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-user-graduate"></i>
                                 </div>
-                                <a href="responden_mahasiswa.php" class="small-box-footer">More info <i
+                                <a href="responden_mahasiswa.php" class="small-box-footer">Detail Lengkap <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3><?php echo $tendikCount; ?></h3>
-                                    <p>Jawaban Tendik</p>
+                                    <p>Total Jawaban Tendik</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-user-tie"></i>
                                 </div>
-                                <a href="responden_tendik.php" class="small-box-footer">More info <i
+                                <a href="responden_tendik.php" class="small-box-footer">Detail Lengkap <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3><?php echo $alumniCount; ?></h3>
-                                    <p>Jawaban Alumni</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                </div>
-                                <a href="responden_alumni.php" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
+
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
 
                     <!-- Second row with more boxes and charts -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3><?php echo $alumniCount; ?></h3>
+                                    <p>Total Jawaban Alumni</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <a href="responden_alumni.php" class="small-box-footer">Detail Lengkap <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-primary">
                                 <div class="inner">
                                     <h3><?php echo $orangTuaCount; ?></h3>
-                                    <p>Jawaban Orang Tua</p>
+                                    <p>Total Jawaban Orang Tua</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-user-friends"></i>
                                 </div>
-                                <a href="responden_ortu.php" class="small-box-footer">More info <i
+                                <a href="responden_ortu.php" class="small-box-footer">Detail Lengkap <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-secondary">
                                 <div class="inner">
                                     <h3><?php echo $industryCount; ?></h3>
-                                    <p>Jawaban Industri</p>
+                                    <p>Total Jawaban Industri</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-building"></i>
                                 </div>
-                                <a href="responden_industri.php" class="small-box-footer">More info <i
+                                <a href="responden_industri.php" class="small-box-footer">Detail Lengkap <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

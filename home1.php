@@ -1,29 +1,7 @@
 <?php
-// $menu = 'index';
 include_once('model/session.php');
-include_once('model/koneksi.php'); // Make sure this file exists and contains the database connection code
-
-// Function to get count from a table, with error handling
-function getCountFromTable($tableName) {
-    global $conn;
-    $query = "SELECT COUNT(*) as count FROM $tableName";
-    $result = mysqli_query($conn, $query);
-    if ($result) {
-        $data = mysqli_fetch_assoc($result);
-        return $data['count'];
-    } else {
-        return 0; // Return 0 if there's an error
-    }
-}
-
-// Fetch counts from database
-$jawabanDosenCount = getCountFromTable('t_jawaban_dosen');
-$mahasiswaCount = getCountFromTable('t_jawaban_mahasiswa'); // Replace with actual table for mahasiswa
-$tendikCount = getCountFromTable('t_jawaban_tendik'); // Replace with actual table for tendik
-$alumniCount = getCountFromTable('t_jawaban_alumni'); // Replace with actual table for alumni
-$orangTuaCount = getCountFromTable('t_jawaban_ortu'); // Replace with actual table for orang tua
-$industryCount = getCountFromTable('t_jawaban_industri'); // Replace with actual table for industry
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +40,7 @@ $industryCount = getCountFromTable('t_jawaban_industri'); // Replace with actual
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <!-- <li class="breadcrumb-item"><a href="landing-page.php">Home</a></li> -->
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
@@ -75,12 +53,13 @@ $industryCount = getCountFromTable('t_jawaban_industri'); // Replace with actual
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
+                        <!-- All Info Boxes in Two Rows -->
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box">
                                 <span class="info-box-icon bg-info elevation-1"><i class="fas fa-comments"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Jawaban Dosen</span>
-                                    <span class="info-box-number"><?php echo $jawabanDosenCount; ?></span>
+                                    <span class="info-box-number">123</span>
                                 </div>
                             </div>
                         </div>
@@ -90,21 +69,19 @@ $industryCount = getCountFromTable('t_jawaban_industri'); // Replace with actual
                                 <span class="info-box-icon bg-danger elevation-1"><i
                                         class="fas fa-user-graduate"></i></span>
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Mahasiswa</span>
-                                    <span class="info-box-number"><?php echo $mahasiswaCount; ?></span>
+                                    <span class="info-box-text">Jawaban Mahasiswa</span>
+                                    <span class="info-box-number">456</span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="clearfix hidden-md-up"></div>
 
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-success elevation-1"><i
                                         class="fas fa-user-tie"></i></span>
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Tendik</span>
-                                    <span class="info-box-number"><?php echo $tendikCount; ?></span>
+                                    <span class="info-box-text">Jawaban Tendik</span>
+                                    <span class="info-box-number">789</span>
                                 </div>
                             </div>
                         </div>
@@ -114,18 +91,21 @@ $industryCount = getCountFromTable('t_jawaban_industri'); // Replace with actual
                                 <span class="info-box-icon bg-warning elevation-1"><i
                                         class="fas fa-user-friends"></i></span>
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Alumni</span>
-                                    <span class="info-box-number"><?php echo $alumniCount; ?></span>
+                                    <span class="info-box-text">Jawaban Alumni</span>
+                                    <span class="info-box-number">101</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="row">
+                        <!-- Second Row -->
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-child"></i></span>
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Orang Tua</span>
-                                    <span class="info-box-number"><?php echo $orangTuaCount; ?></span>
+                                    <span class="info-box-text">Jawaban Orang Tua</span>
+                                    <span class="info-box-number">112</span>
                                 </div>
                             </div>
                         </div>
@@ -135,12 +115,11 @@ $industryCount = getCountFromTable('t_jawaban_industri'); // Replace with actual
                                 <span class="info-box-icon bg-secondary elevation-1"><i
                                         class="fas fa-industry"></i></span>
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Industry</span>
-                                    <span class="info-box-number"><?php echo $industryCount; ?></span>
+                                    <span class="info-box-text">Jawaban Industry</span>
+                                    <span class="info-box-number">131</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>

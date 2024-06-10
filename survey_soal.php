@@ -83,7 +83,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                                     <th>No Urut</th>
                                     <th>Soal</th>
                                     <th>Kategori</th>
-                                    <th>Jenis Soal</th>
+                                    <th>Jenis</th>
                                     <th>Survey</th>
                                     <th>Aksi</th>
                                 </tr>

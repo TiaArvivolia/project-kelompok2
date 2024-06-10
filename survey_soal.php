@@ -80,7 +80,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Kode Soal</th>
+                                    <th>No Urut</th>
                                     <th>Soal</th>
                                     <th>Kategori</th>
                                     <th>Jenis Soal</th>
@@ -97,7 +97,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                                 while ($row = $list->fetch_assoc()) {
                                     echo '<tr>
                       <td>' . $i . '</td>
-                      <td>' . $row['soal_id'] . '</td>
+                      <td>' . $row['no_urut'] . '</td>
                       <td>' . $row['soal_nama'] . '</td>
                       <td>' . $row['kategori_nama'] . '</td>
                       <td>' . $row['soal_jenis'] . '</td>

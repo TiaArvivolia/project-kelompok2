@@ -63,7 +63,7 @@ $result = $jawaban_dosen->getJawabanById($id);
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Responden Nama</th>
+                                    <th>Nama</th>
                                     <th>Pertanyaan</th>
                                     <th>Jawaban</th>
                                 </tr>

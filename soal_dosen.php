@@ -12,119 +12,120 @@ $soalDosen = new Soal();
     <title>Beranda</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
     <style>
-        .card-header {
-            background-color: #007BFF;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .card-header {
+        background-color: #007BFF;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .card-title {
-            color: white;
-            font-weight: bold;
-        }
+    .card-title {
+        color: white;
+        font-weight: bold;
+    }
 
-        .form-group label {
-            font-weight: bold;
-        }
+    .form-group label {
+        font-weight: bold;
+    }
 
-        .btn-primary {
-            background-color: #FFC107;
-            border-color: #FFC107;
-            color: black;
-        }
+    .btn-primary {
+        background-color: #FFC107;
+        border-color: #FFC107;
+        color: black;
+    }
 
-        .btn-primary:hover {
-            background-color: #e0a800;
-            border-color: #d39e00;
-        }
+    .btn-primary:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
 
-        .survey-container {
-            margin-top: 20px;
-        }
+    .survey-container {
+        margin-top: 20px;
+    }
 
-        .survey-question {
-            margin-bottom: 20px;
-        }
+    .survey-question {
+        margin-bottom: 20px;
+    }
 
-        .survey-question h6 {
-            margin-bottom: 14px;
-            font-weight: popins;
-        }
+    .survey-question h6 {
+        margin-bottom: 14px;
+        font-weight: popins;
+    }
 
+    .options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: left;
+
+    }
+
+    .option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+        padding-left: 22px;
+
+    }
+
+    .option input[type="radio"] {
+        margin-bottom: 2px;
+        transform: scale(1.2);
+    }
+
+    .option span {
+        font-size: 14px;
+    }
+
+    .btn-submit-container {
+        display: flex;
+        justify-content: flex-end;
+        /* Align submit button to the right */
+        margin-top: 20px;
+    }
+
+    .btn-submit {
+        background-color: #007BFF;
+        border-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    @media (max-width: 768px) {
         .options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: left;
-
+            justify-content: center;
+            /* Center-align options on smaller screens */
         }
 
         .option {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 30px;
-            padding-left: 22px;
-
-        }
-
-        .option input[type="radio"] {
-            margin-bottom: 2px;
-            transform: scale(1.2);
-        }
-
-        .option span {
-            font-size: 14px;
+            margin-right: 10px;
+            /* Reduce margin for smaller screens */
+            padding-left: 5px;
+            /* Reduce padding for smaller screens */
         }
 
         .btn-submit-container {
-            display: flex;
-            justify-content: flex-end;
-            /* Align submit button to the right */
-            margin-top: 20px;
+            justify-content: center;
         }
-
-        .btn-submit {
-            background-color: #007BFF;
-            border-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-
-        .btn-submit:hover {
-            background-color: #0056b3;
-            border-color: #004085;
-        }
-
-        @media (max-width: 768px) {
-            .options {
-                justify-content: center;
-                /* Center-align options on smaller screens */
-            }
-
-            .option {
-                margin-right: 10px;
-                /* Reduce margin for smaller screens */
-                padding-left: 5px;
-                /* Reduce padding for smaller screens */
-            }
-
-            .btn-submit-container {
-                justify-content: center;
-            }
-        }
+    }
     </style>
 </head>
 
@@ -143,21 +144,27 @@ $soalDosen = new Soal();
                             <div class="card-tools"></div>
                         </div>
                         <div class="card-body">
-                            <form action="soal_dosen_action.php?act=simpan&responden_dosen_id=<?php echo $_GET['responden_dosen_id']; ?>" method="post">
+                            <form
+                                action="soal_dosen_action.php?act=simpan&responden_dosen_id=<?php echo $_GET['responden_dosen_id']; ?>"
+                                method="post">
                                 <div class="survey-container">
                                     <?php
                                     $options = ["Sangat kurang", "Kurang", "Cukup", "Baik", "Sangat Baik"];
                                     foreach ($soalDosen->getSoalDosen() as $soal) {
                                         echo "<div class='form-group survey-question'>";
                                         echo "<h6>{$soal['no_urut']}. {$soal['soal_nama']}</h6>";
-                                        echo "<div class='options'>";
-                                        foreach ($options as $jawaban) {
-                                            echo "<div class='option'>";
-                                            echo "<input type='radio' name='jawaban[{$soal['soal_id']}]' value='{$jawaban}' required>";
-                                            echo "<span>{$jawaban}</span>";
+                                        if ($soal['soal_jenis'] == 'Essay') {
+                                            echo "<textarea name='jawaban[{$soal['soal_id']}]' class='form-control' rows='4' placeholder='Masukkan saran Anda disni' required></textarea>";
+                                        } else {
+                                            echo "<div class='options'>";
+                                            foreach ($options as $jawaban) {
+                                                echo "<div class='option'>";
+                                                echo "<input type='radio' name='jawaban[{$soal['soal_id']}]' value='{$jawaban}' required>";
+                                                echo "<span>{$jawaban}</span>";
+                                                echo "</div>";
+                                            }
                                             echo "</div>";
                                         }
-                                        echo "</div>";
                                         echo "<input type='hidden' name='soal_id[]' value='{$soal['soal_id']}'>";
                                         echo "</div>";
                                     }

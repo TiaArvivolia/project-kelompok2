@@ -74,7 +74,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Responden</th>
+                                    <th>Responden</th>
                                     <th>Pertanyaan</th>
                                     <th>Jawaban</th>
                                 </tr>

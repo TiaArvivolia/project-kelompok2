@@ -150,22 +150,26 @@ $menu = 'soal';
                                 method="post">
                                 <div class="survey-container">
                                     <?php
-                        $options = ["Sangat kurang", "Kurang", "Cukup", "Baik", "Sangat Baik"];
-                        foreach ($soalAlumni->getSoalAlumni() as $soal) {
-                            echo "<div class='form-group survey-question'>";
-                            echo "<h6>{$soal['no_urut']}. {$soal['soal_nama']}</h6>";
-                            echo "<div class='options'>";
-                            foreach ($options as $jawaban) {
-                                echo "<div class='option'>";
-                                echo "<input type='radio' name='jawaban[{$soal['soal_id']}]' value='{$jawaban}' required>";
-                                echo "<span>{$jawaban}</span>";
-                                echo "</div>";
-                            }
-                            echo "</div>";
-                            echo "<input type='hidden' name='soal_id[]' value='{$soal['soal_id']}'>";
-                            echo "</div>";
-                        }
-                        ?>
+                                    $options = ["Sangat kurang", "Kurang", "Cukup", "Baik", "Sangat Baik"];
+                                    foreach ($soalAlumni->getSoalAlumni() as $soal) {
+                                        echo "<div class='form-group survey-question'>";
+                                        echo "<h6>{$soal['no_urut']}. {$soal['soal_nama']}</h6>";
+                                        if ($soal['soal_jenis'] == 'Essay') {
+                                            echo "<textarea name='jawaban[{$soal['soal_id']}]' class='form-control' rows='4' placeholder='Masukkan saran Anda disni' required></textarea>";
+                                        } else {
+                                            echo "<div class='options'>";
+                                            foreach ($options as $jawaban) {
+                                                echo "<div class='option'>";
+                                                echo "<input type='radio' name='jawaban[{$soal['soal_id']}]' value='{$jawaban}' required>";
+                                                echo "<span>{$jawaban}</span>";
+                                                echo "</div>";
+                                            }
+                                            echo "</div>";
+                                        }
+                                        echo "<input type='hidden' name='soal_id[]' value='{$soal['soal_id']}'>";
+                                        echo "</div>";
+                                    }
+                                    ?>
                                     <div class="btn-submit-container">
                                         <button type="submit" class="btn-submit">Submit</button>
                                     </div>

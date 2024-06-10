@@ -23,8 +23,7 @@ if ($act == 'edit' && $id) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Responden Alumni Form</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
@@ -60,50 +59,37 @@ if ($act == 'edit' && $id) {
                         <form method="post" action="responden_alumni_action.php?act=<?= $act ?>&id=<?= $id ?>">
                             <div class="form-group">
                                 <label for="survey_id">Survey ID</label>
-                                <input type="text" class="form-control" id="survey_id" name="survey_id"
-                                    value="<?= isset($data['survey_id']) ? $data['survey_id'] : '' ?>" required>
+                                <input type="text" class="form-control" id="survey_id" name="survey_id" value="<?= isset($data['survey_id']) ? $data['survey_id'] : '' ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="responden_tanggal">Tanggal</label>
-                                <input type="date" class="form-control" id="responden_tanggal" name="responden_tanggal"
-                                    value="<?= isset($data['responden_tanggal']) ? $data['responden_tanggal'] : '' ?>"
-                                    required>
+                                <input type="date" class="form-control" id="responden_tanggal" name="responden_tanggal" value="<?= isset($data['responden_tanggal']) ? $data['responden_tanggal'] : '' ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="responden_nim">NIM</label>
-                                <input type="text" class="form-control" id="responden_nim" name="responden_nim"
-                                    value="<?= isset($data['responden_nim']) ? $data['responden_nim'] : '' ?>" required>
+                                <input type="text" class="form-control" id="responden_nim" name="responden_nim" value="<?= isset($data['responden_nim']) ? $data['responden_nim'] : '' ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="responden_nama">Nama</label>
-                                <input type="text" class="form-control" id="responden_nama" name="responden_nama"
-                                    value="<?= isset($data['responden_nama']) ? $data['responden_nama'] : '' ?>"
-                                    required>
+                                <input type="text" class="form-control" id="responden_nama" name="responden_nama" value="<?= isset($data['responden_nama']) ? $data['responden_nama'] : '' ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="responden_prodi">Program Studi</label>
-                                <input type="text" class="form-control" id="responden_prodi" name="responden_prodi"
-                                    value="<?= isset($data['responden_prodi']) ? $data['responden_prodi'] : '' ?>"
-                                    required>
+                                <input type="text" class="form-control" id="responden_prodi" name="responden_prodi" value="<?= isset($data['responden_prodi']) ? $data['responden_prodi'] : '' ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="responden_email">Email</label>
-                                <input type="email" class="form-control" id="responden_email" name="responden_email"
-                                    value="<?= isset($data['responden_email']) ? $data['responden_email'] : '' ?>"
-                                    required>
+                                <input type="email" class="form-control" id="responden_email" name="responden_email" value="<?= isset($data['responden_email']) ? $data['responden_email'] : '' ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="responden_hp">Nomor HP</label>
-                                <input type="text" class="form-control" id="responden_hp" name="responden_hp"
-                                    value="<?= isset($data['responden_hp']) ? $data['responden_hp'] : '' ?>" required>
+                                <input type="text" class="form-control" id="responden_hp" name="responden_hp" value="<?= isset($data['responden_hp']) ? $data['responden_hp'] : '' ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="tahun_lulus">Tahun Lulus</label>
-                                <input type="text" class="form-control" id="tahun_lulus" name="tahun_lulus"
-                                    value="<?= isset($data['tahun_lulus']) ? $data['tahun_lulus'] : '' ?>" required>
+                                <input type="text" class="form-control" id="tahun_lulus" name="tahun_lulus" value="<?= isset($data['tahun_lulus']) ? $data['tahun_lulus'] : '' ?>" required>
                             </div>
-                            <button type="submit"
-                                class="btn btn-primary"><?= $act == 'edit' ? 'Simpan Perubahan' : 'Simpan' ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $act == 'edit' ? 'Simpan Perubahan' : 'Simpan' ?></button>
                         </form>
                     </div>
                     <div class="card-footer">

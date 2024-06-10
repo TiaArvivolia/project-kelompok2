@@ -140,8 +140,8 @@ $menu = 'soal';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Survei Kepuasan Orang Tua terhadap Sistem
-                                Pengelolaan Sumberdaya Manusia Politeknik Negeri Malang Tahun 2024</h2>
+                            <h2 class="card-title">Survei Kepuasan Orang Tua terhadap Politeknik Negeri Malang Tahun
+                                2024</h2>
                             <div class="card-tools"></div>
                         </div>
                         <div class="card-body">

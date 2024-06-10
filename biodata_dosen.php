@@ -89,9 +89,9 @@ $menu = 'index';
                                         placeholder="NIP Anda">
                                 </div>
                                 <div class="form-group">
-                                    <label for="unit">Sebagai Dosen</label>
+                                    <label for="unit">Unit</label>
                                     <input type="text" name="responden_unit" class="form-control" required
-                                        placeholder="Contoh: Dosen Jurusan Teknologi Informasi">
+                                        placeholder="Unit Anda">
                                 </div>
                                 <div class="form-group">
                                     <label for="survey">Survey</label>

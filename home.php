@@ -11,7 +11,8 @@ include_once('model/session.php');
     <title>Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -39,7 +40,7 @@ include_once('model/session.php');
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <!-- <li class="breadcrumb-item"><a href="landing-page.php">Home</a></li> -->
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
@@ -65,7 +66,8 @@ include_once('model/session.php');
 
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user-graduate"></i></span>
+                                <span class="info-box-icon bg-danger elevation-1"><i
+                                        class="fas fa-user-graduate"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Jawaban Mahasiswa</span>
                                     <span class="info-box-number">456</span>
@@ -75,7 +77,8 @@ include_once('model/session.php');
 
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                                <span class="info-box-icon bg-success elevation-1"><i class="fas fa-user-tie"></i></span>
+                                <span class="info-box-icon bg-success elevation-1"><i
+                                        class="fas fa-user-tie"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Jawaban Tendik</span>
                                     <span class="info-box-number">789</span>
@@ -85,7 +88,8 @@ include_once('model/session.php');
 
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-friends"></i></span>
+                                <span class="info-box-icon bg-warning elevation-1"><i
+                                        class="fas fa-user-friends"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Jawaban Alumni</span>
                                     <span class="info-box-number">101</span>
@@ -108,7 +112,8 @@ include_once('model/session.php');
 
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                                <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-industry"></i></span>
+                                <span class="info-box-icon bg-secondary elevation-1"><i
+                                        class="fas fa-industry"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Jawaban Industry</span>
                                     <span class="info-box-number">131</span>

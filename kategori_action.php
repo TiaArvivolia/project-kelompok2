@@ -33,9 +33,16 @@ if ($act == 'edit') {
 if ($act == 'hapus') {
     $id = $_GET['id'];
 
-    $hapus = new Kategori();
-    $hapus->deleteData($id);
-
-    header('location: kategori.php?status=sukses&message=Data berhasil dihapus');
+    try {
+        $hapus = new Kategori();
+        $hapus->deleteData($id);
+        header('location: kategori.php?status=sukses&message=Data berhasil dihapus');
+    } catch (mysqli_sql_exception $e) {
+        if ($e->getCode() == 1451) { // Foreign key constraint error code
+            header('location: kategori.php?status=error&message=Data tidak bisa dihapus karena sedang digunakan di table lain');
+        } else {
+            header('location: kategori.php?status=error&message=Terjadi kesalahan saat menghapus data');
+        }
+    }
 }
 ?>

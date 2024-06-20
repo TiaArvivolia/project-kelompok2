@@ -73,6 +73,10 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                             echo '<div class="alert alert-success">
                       ' . $message . '
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
+                        } elseif ($status == 'gagal') {
+                            echo '<div class="alert alert-danger">
+                      ' . $message . '
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
                         }
                         ?>
 
@@ -150,4 +154,4 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
 
 </body>
 
-</html>
+</html

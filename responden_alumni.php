@@ -50,16 +50,24 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Data Responden Alumni</h3>
-                                    <!-- <div class="card-tools">
-                                        <a href="responden_alumni_form.php?act=tambah"
-                                            class="btn btn-sm btn-primary">Tambah</a>
-                                    </div> -->
+                                    <div class="row align-items-center">
+                                        <h3 class="card-title col">Data Responden Alumni</h3>
+                                        <div class="card-tools col">
+                                            <a href="excel_alumni.php" class="btn btn-success float-right">Cetak
+                                                Excel</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body overflow-auto">
+
+                                    <?php
+                                    if ($status == 'sukses') {
+                                        echo '<div class="alert alert-success">' . $message . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
+                                    }
+                                    ?>
                                     <div class="table-responsive">
                                         <table class="table table-sm table-bordered">
                                             <thead>

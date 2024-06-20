@@ -1,5 +1,5 @@
 <?php
-$menu = 'index';
+$menu = 'biodata';
 ?>
 <!DOCTYPE html>
 <html lang="en">

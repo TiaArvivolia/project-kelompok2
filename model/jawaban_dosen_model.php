@@ -18,13 +18,16 @@ class JawabanDosen
         $query = "SELECT 
                     jd.jawaban,
                     rd.responden_nama,
-                    ms.soal_nama 
+                    ms.soal_nama,
+                    k.kategori_nama
                   FROM 
                     t_jawaban_dosen jd
                   JOIN 
                     t_responden_dosen rd ON jd.responden_dosen_id = rd.responden_dosen_id
                   JOIN 
                     m_survey_soal ms ON jd.soal_id = ms.soal_id
+                  JOIN
+                    m_kategori k ON ms.kategori_id = k.kategori_id
                   WHERE 
                     jd.responden_dosen_id = ?";
         $stmt = $this->db->prepare($query);
@@ -32,4 +35,27 @@ class JawabanDosen
         $stmt->execute();
         return $stmt->get_result();
     }
+    
+// untuk mengambil Data dan Di exsport ke file excel
+public function getAllJawaban()
+    {
+        $query = "SELECT 
+                    jd.jawaban,
+                    rd.responden_nama,
+                    rd.responden_nip,
+                    rd.responden_unit,
+                    rd.responden_tanggal,
+                    ms.soal_nama,
+                    k.kategori_nama
+                  FROM 
+                    t_jawaban_dosen jd
+                  JOIN 
+                    t_responden_dosen rd ON jd.responden_dosen_id = rd.responden_dosen_id
+                  JOIN 
+                    m_survey_soal ms ON jd.soal_id = ms.soal_id
+                  JOIN
+                    m_kategori k ON ms.kategori_id = k.kategori_id";
+        return $this->db->query($query);
+    }
 }
+?>

@@ -1,14 +1,12 @@
 <?php
+$menu = 'kategori';
+include_once('model/kategori.php');
 include_once('model/session.php');
+
 $status = isset($_GET['status']) ? strtolower($_GET['status']) : null;
 $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
-
-if (!class_exists('Kategori')) {
-    include_once('model/kategori.php');
-}
-
-$menu = 'kategori';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,6 +55,12 @@ $menu = 'kategori';
                     <div class="card-body">
                         <?php if ($status == 'sukses') { ?>
                         <div class="alert alert-success">
+                            <?php echo $message; ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+                        <?php } elseif ($status == 'error') { ?>
+                        <div class="alert alert-danger">
                             <?php echo $message; ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>

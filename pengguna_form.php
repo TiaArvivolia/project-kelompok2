@@ -105,7 +105,7 @@ include_once('model/session.php');
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input required type="text" name="password" id="password" class="form-control">
+                                <input required type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="simpan" class="btn btn-primary"

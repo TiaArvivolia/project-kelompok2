@@ -1,5 +1,5 @@
 <?php
-$menu = 'index';
+$menu = 'biodata';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,8 +52,8 @@ $menu = 'index';
     <!-- Site wrapper -->
     <div class="wrapper">
 
-        <?php include_once('layouts/pengguna/header.php'); ?>
-        <?php include_once('layouts/pengguna/sidebar.php'); ?>
+        <?php include_once ('layouts/pengguna/header.php'); ?>
+        <?php include_once ('layouts/pengguna/sidebar.php'); ?>
 
         <div class="content-wrapper">
             <section class="content-header">

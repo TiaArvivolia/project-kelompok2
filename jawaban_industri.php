@@ -20,7 +20,6 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $status = 'error';
     $message = 'Parameter ID tidak valid.';
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +36,13 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    .table-responsive {
+        overflow-x: auto;
+    }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -65,44 +71,49 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             </section>
 
             <section class="content">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Data Jawaban Industri</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-sm table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Responden</th>
-                                    <th>Pertanyaan</th>
-                                    <th>Jawaban</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if ($result->num_rows > 0) {
-                                    $i = 1;
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo '<tr>
-                                            <td>' . $i . '</td>
-                                            <td>' . htmlspecialchars($row['responden_nama']) . '</td>
-                                            <td>' . htmlspecialchars($row['soal_nama']) . '</td>
-                                            <td>' . htmlspecialchars($row['jawaban']) . '</td>
-                                        </tr>';
-                                        $i++;
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Jawaban Industri</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Kategori</th>
+                                            <th>Pertanyaan</th>
+                                            <th>Jawaban</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                    if ($result->num_rows > 0) {
+                                        $i = 1;
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<tr>
+                                                <td>' . $i . '</td>
+                                                <td>' . htmlspecialchars($row['responden_nama']) . '</td>
+                                                <td>' . htmlspecialchars($row['kategori_nama']) . '</td>
+                                                <td>' . htmlspecialchars($row['soal_nama']) . '</td>
+                                                <td>' . htmlspecialchars($row['jawaban']) . '</td>
+                                            </tr>';
+                                            $i++;
+                                        }
+                                    } else {
+                                        echo '<tr><td colspan="5">Tidak ada jawaban ditemukan.</td></tr>';
                                     }
-                                } else {
-                                    echo '<tr><td colspan="4">Tidak ada jawaban ditemukan.</td></tr>';
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            Footer
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        Footer
-                    </div>
-                </div>
             </section>
         </div>
         <?php include_once('layouts/footer.php'); ?>

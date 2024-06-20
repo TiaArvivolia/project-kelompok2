@@ -43,9 +43,16 @@ if ($act == 'hapus') {
     $id = $_GET['id'];
 
     $hapus = new SurveySoal();
-    if ($hapus->deleteData($id)) {
+
+    try {
+        $hapus->deleteData($id);
         header('location: survey_soal.php?status=sukses&message=Data berhasil dihapus');
-    } else {
-        header('location: survey_soal.php?status=gagal&message=Data gagal dihapus');
+    } catch (mysqli_sql_exception $e) {
+        if ($e->getCode() == 1451) {
+            header('location: survey_soal.php?status=gagal&message=Data tidak bisa dihapus karena sedang digunakan di table lain');
+        } else {
+            throw $e;
+        }
     }
 }
+?>

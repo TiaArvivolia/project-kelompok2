@@ -67,7 +67,7 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                             <a href="pengguna_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah</a>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body overflow-auto">
 
                         <?php
                         if ($status == 'sukses') {

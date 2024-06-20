@@ -25,8 +25,15 @@ $result = $jawaban_mahasiswa->getJawabanById($id);
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <style>
+    .table-responsive {
+        overflow-x: auto;
+    }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -46,6 +53,8 @@ $result = $jawaban_mahasiswa->getJawabanById($id);
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="responden_mahasiswa.php">Responden Mahasiswa</a>
+                                </li>
                                 <li class="breadcrumb-item active">Jawaban Mahasiswa</li>
                             </ol>
                         </div>
@@ -54,42 +63,48 @@ $result = $jawaban_mahasiswa->getJawabanById($id);
             </section>
 
             <section class="content">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Data Jawaban Mahasiswa</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-sm table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Pertanyaan</th>
-                                    <th>Jawaban</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if ($result->num_rows > 0) {
-                                    $i = 1;
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo '<tr>
-                                            <td>' . $i . '</td>
-                                            <td>' . htmlspecialchars($row['responden_nama']) . '</td>
-                                            <td>' . htmlspecialchars($row['soal_nama']) . '</td>
-                                            <td>' . htmlspecialchars($row['jawaban']) . '</td>
-                                        </tr>';
-                                        $i++;
-                                    }
-                                } else {
-                                    echo '<tr><td colspan="4">Tidak ada jawaban ditemukan.</td></tr>';
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-                        Footer
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Jawaban Mahasiswa</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Kategori</th>
+                                            <th>Pertanyaan</th>
+                                            <th>Jawaban</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        if ($result->num_rows > 0) {
+                                            $i = 1;
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo '<tr>
+                                                    <td>' . $i . '</td>
+                                                    <td>' . htmlspecialchars($row['responden_nama']) . '</td>
+                                                    <td>' . htmlspecialchars($row['kategori_nama']) . '</td>
+                                                    <td>' . htmlspecialchars($row['soal_nama']) . '</td>
+                                                    <td>' . htmlspecialchars($row['jawaban']) . '</td>
+                                                </tr>';
+                                                $i++;
+                                            }
+                                        } else {
+                                            echo '<tr><td colspan="4">Tidak ada jawaban ditemukan.</td></tr>';
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            Footer
+                        </div>
                     </div>
                 </div>
             </section>
@@ -98,8 +113,11 @@ $result = $jawaban_mahasiswa->getJawabanById($id);
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
     </div>
+    <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE JS -->
     <script src="dist/js/adminlte.min.js"></script>
 </body>
 

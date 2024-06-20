@@ -53,9 +53,15 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Data Responden Dosen</h3>
+                                    <div class="row align-items-center">
+                                        <h3 class="card-title col">Data Responden Dosen</h3>
+                                        <div class="card-tools col">
+                                            <a href="excel_dosen.php" class="btn btn-success float-right">Cetak
+                                                Excel</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body overflow-auto">
 
                                     <?php
                                     if ($status == 'sukses') {

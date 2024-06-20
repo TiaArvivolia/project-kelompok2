@@ -110,7 +110,9 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3><?php echo $jawabanDosenCount; ?></h3>
-                                    <p>Total Jawaban Dosen</p>
+                                    <div class="d-flex justify-content-center">
+                                        <p style="max-width: 70%;">Total Jawaban Dosen</p>
+                                    </div>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-chalkboard-teacher"></i>
@@ -120,12 +122,14 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 ">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3><?php echo $mahasiswaCount; ?></h3>
-                                    <p>Total Jawaban Mahasiswa</p>
+                                    <div class="d-flex justify-content-center">
+                                        <p style="max-width: 70%;">Total Jawaban Mahasiswa</p>
+                                    </div>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-user-graduate"></i>
@@ -135,12 +139,14 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 ">
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3><?php echo $tendikCount; ?></h3>
-                                    <p>Total Jawaban Tendik</p>
+                                    <div class="d-flex justify-content-center">
+                                        <p style="max-width: 70%;">Total Jawaban Tendik</p>
+                                    </div>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-user-tie"></i>
@@ -150,19 +156,14 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                             </div>
                         </div>
                         <!-- ./col -->
-
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
-
-                    <!-- Second row with more boxes and charts -->
-                    <div class="row">
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 ">
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
                                     <h3><?php echo $alumniCount; ?></h3>
-                                    <p>Total Jawaban Alumni</p>
+                                    <div class="d-flex justify-content-center">
+                                        <p style="max-width: 70%;">Total Jawaban Alumni</p>
+                                    </div>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-user-graduate"></i>
@@ -171,12 +172,14 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 ">
                             <!-- small box -->
                             <div class="small-box bg-primary">
                                 <div class="inner">
                                     <h3><?php echo $orangTuaCount; ?></h3>
-                                    <p>Total Jawaban Orang Tua</p>
+                                    <div class="d-flex justify-content-center">
+                                        <p style="max-width: 70%;">Total Jawaban Orang Tua</p>
+                                    </div>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-user-friends"></i>
@@ -186,12 +189,14 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-6 ">
                             <!-- small box -->
                             <div class="small-box bg-secondary">
                                 <div class="inner">
                                     <h3><?php echo $industryCount; ?></h3>
-                                    <p>Total Jawaban Industri</p>
+                                    <div class="d-flex justify-content-center">
+                                        <p style="max-width: 70%;">Total Jawaban Industri</p>
+                                    </div>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-building"></i>
@@ -213,9 +218,7 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                                     <h3 class="card-title">Grafik Respons Survei</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div class="chart-container">
-                                        <canvas id="responseChart"></canvas>
-                                    </div>
+                                    <canvas id="responseChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -226,9 +229,7 @@ $industryCount = getCountFromTable('t_responden_industri'); // Replace with actu
                                     <h3 class="card-title">Distribusi Respons</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div class="chart-container">
-                                        <canvas id="distributionChart"></canvas>
-                                    </div>
+                                    <canvas id="distributionChart"></canvas>
                                 </div>
                             </div>
                         </div>

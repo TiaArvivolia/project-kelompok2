@@ -50,43 +50,49 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
             </section>
 
             <section class="content">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Data Responden Orang Tua</h3>
-                        <!-- <div class="card-tools">
-                            <a href="responden_ortu_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah</a>
-                        </div> -->
-                    </div>
-                    <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <h3 class="card-title col">Data Responden Orang Tua</h3>
+                                        <div class="card-tools col">
+                                            <a href="excel_ortu.php" class="btn btn-success float-right">Cetak
+                                                Excel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body overflow-auto">
 
-                        <?php
-                        if ($status == 'sukses') {
-                            echo '<div class="alert alert-success">' . $message . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
-                        }
-                        ?>
-
-                        <div class="table-responsive">
-                            <table class="table table-sm table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>ID</th>
-                                        <th>Tanggal</th>
-                                        <th>Nama</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Umur</th>
-                                        <th>Nomor HP</th>
-                                        <th>Pendidikan</th>
-                                        <th>Pekerjaan</th>
-                                        <th>Penghasilan</th>
-                                        <th>NIM Mahasiswa</th>
-                                        <th>Nama Mahasiswa</th>
-                                        <th>Prodi Mahasiswa</th>
-                                        <th>Jawaban</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
                                     <?php
+                                    if ($status == 'sukses') {
+                                        echo '<div class="alert alert-success">' . $message . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
+                                    }
+                                    ?>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>ID</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Nama</th>
+                                                    <th>Jenis Kelamin</th>
+                                                    <th>Umur</th>
+                                                    <th>Nomor HP</th>
+                                                    <th>Pendidikan</th>
+                                                    <th>Pekerjaan</th>
+                                                    <th>Penghasilan</th>
+                                                    <th>NIM Mahasiswa</th>
+                                                    <th>Nama Mahasiswa</th>
+                                                    <th>Prodi Mahasiswa</th>
+                                                    <th>Jawaban</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
                                     $responden_ortu = new RespondenOrtu();
                                     $list = $responden_ortu->getData();
 
@@ -114,14 +120,14 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                                         $i++;
                                     }
                                     ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        Footer
-                    </div>
-                </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Footer
+                                </div>
+                            </div>
             </section>
         </div>
         <?php include_once('layouts/footer.php'); ?>

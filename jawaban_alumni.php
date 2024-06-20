@@ -25,8 +25,16 @@ $result = $jawaban_alumni->getJawabanById($id);
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    .table-responsive {
+        overflow-x: auto;
+    }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -46,6 +54,7 @@ $result = $jawaban_alumni->getJawabanById($id);
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="responden_alumni.php">Responden Alumni</a></li>
                                 <li class="breadcrumb-item active">Jawaban Alumni</li>
                             </ol>
                         </div>
@@ -54,44 +63,49 @@ $result = $jawaban_alumni->getJawabanById($id);
             </section>
 
             <section class="content">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Data Jawaban Alumni</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-sm table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Pertanyaan</th>
-                                    <th>Jawaban</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if ($result->num_rows > 0) {
-                                    $i = 1;
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo '<tr>
-                                            <td>' . $i . '</td>
-                                            <td>' . htmlspecialchars($row['responden_nama']) . '</td>
-                                            <td>' . htmlspecialchars($row['soal_nama']) . '</td>
-                                            <td>' . htmlspecialchars($row['jawaban']) . '</td>
-                                        </tr>';
-                                        $i++;
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Jawaban Alumni</h3>
+                        </div>
+                        <div class="card-body overflow-auto">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Kategori</th>
+                                            <th>Pertanyaan</th>
+                                            <th>Jawaban</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                    if ($result->num_rows > 0) {
+                                        $i = 1;
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<tr>
+                                                <td>' . $i . '</td>
+                                                <td>' . htmlspecialchars($row['responden_nama']) . '</td>
+                                                <td>' . htmlspecialchars($row['kategori_nama']) . '</td>
+                                                <td>' . htmlspecialchars($row['soal_nama']) . '</td>
+                                                <td>' . htmlspecialchars($row['jawaban']) . '</td>
+                                            </tr>';
+                                            $i++;
+                                        }
+                                    } else {
+                                        echo '<tr><td colspan="5">Tidak ada jawaban ditemukan.</td></tr>';
                                     }
-                                } else {
-                                    echo '<tr><td colspan="4">Tidak ada jawaban ditemukan.</td></tr>';
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            Footer
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        Footer
-                    </div>
-                </div>
             </section>
         </div>
         <?php include_once('layouts/footer.php'); ?>

@@ -14,7 +14,8 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Responden Industri</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
@@ -41,15 +42,22 @@ $message = isset($_GET['message']) ? strtolower($_GET['message']) : null;
                 </div>
             </section>
 
+
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Data Responden Industri</h3>
+                                    <div class="row align-items-center">
+                                        <h3 class="card-title col">Data Responden Industri</h3>
+                                        <div class="card-tools col">
+                                            <a href="excel_industri.php" class="btn btn-success float-right">Cetak
+                                                Excel</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body overflow-auto">
                                     <?php
                                     if ($status == 'sukses') {
                                         echo '<div class="alert alert-success">' . htmlspecialchars($message) . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
